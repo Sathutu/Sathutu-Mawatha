@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <title>Sri Lanka Verification</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; padding-top: 50px; }
+        .btn { padding: 15px 30px; margin: 20px; font-size: 18px; cursor: pointer; border: none; border-radius: 5px; color: white; }
+        .btn-1 { background-color: #ff9900; }
+        .btn-2 { background-color: #008000; }
+    </style>
+</head>
+<body>
+
+    <h1>Sri Lanka</h1>
+
+    <button id="btn1" class="btn btn-1" onclick="startTimer('https://google.com')">Verification 1</button>
+    <button id="btn2" class="btn btn-2" onclick="startTimer('https://wikipedia.org')">Verification 2</button>
+
+    <script>
+        function startTimer(url) {
+            let btn = event.target;
+            let count = 5;
+            btn.disabled = true;
+
+            let interval = setInterval(() => {
+                count--;
+                btn.innerText = "කරුණාකර තත්පර " + count + "ක් රැඳී සිටින්න...";
+                
+                if (count <= 0) {
+                    clearInterval(interval);
+                    window.location.href = url; // නියමිත ලින්ක් එකට යවයි
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
